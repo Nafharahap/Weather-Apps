@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_refresh1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context=".DetailActivity">
+    
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:id="@+id/detail_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:text="Date"/>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <ImageView
+                android:id="@+id/img_detail"
+                android:layout_width="0dp"
+                android:layout_height="220dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                tools:src="@drawable/cloud" />
+            
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:weightSum="6"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/detail_maxtemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_gravity="right"
+                    android:textColor="@color/white"
+                    android:layout_weight="1"
+                    android:textSize="15dp"
+                    android:text="Maximal Temperature" />
+
+                <TextView
+                    android:id="@+id/detail_mintemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:text="Minimal Temperature" />
+
+                <TextView
+                    android:id="@+id/detail_avgtemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:text="Average Temperature" />
+
+                <TextView
+                    android:id="@+id/detail_wind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:text="Maximum Wind Temperature" />
+
+                <TextView
+                    android:id="@+id/detail_precip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:text="Total Precipitation" />
+
+                <TextView
+                    android:id="@+id/detail_condition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:text="Weather Condition" />
+
+            </LinearLayout>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_margin="12dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/hour_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="24dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/hour_row" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>

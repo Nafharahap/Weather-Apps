@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:text="Location"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:includeFontPadding="false"
+            android:text="Condition"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_marginTop="1dp">
+
+            <ImageView
+                android:id="@+id/img_weather"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                tools:src="@drawable/cloud" />
+
+            <TextView
+                android:id="@+id/temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:text="°C"
+                android:textSize="45sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_aqi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            app:backgroundTint="@android:color/transparent"
+            android:background="@drawable/roundedbutton"
+            android:elevation="4dp"
+            android:onClick="aqibutton"
+            android:textSize="12dp"
+            android:text="Air Quality" />
+
+        <TextView
+            android:id="@+id/last_updated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:includeFontPadding="false"
+            android:text="Last Update:" />
+
+    </LinearLayout>
+    
+    <View
+        android:layout_width="195dp"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="center_horizontal"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Humidity"
+                android:textAllCaps="false"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold" />
+            
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/hum"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="70dp" />
+
+            <TextView
+                android:id="@+id/humidity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:text=" %" />
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Wind Speed"
+                android:textAllCaps="false"
+                android:layout_gravity="center_vertical"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/wind"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="70dp" />
+
+            <TextView
+                android:id="@+id/wind_kph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:text=" km/hour" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Pressure"
+                android:textAllCaps="false"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/pressure"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="70dp" />
+
+            <TextView
+                android:id="@+id/pressure_mb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:padding="5dp"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text=" mb" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Precipitation"
+                android:textAllCaps="false"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/precip"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="70dp" />
+
+            <TextView
+                android:id="@+id/preci_mm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:text=" mm" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Cloud Cover"
+                android:textAllCaps="false"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/cloud"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="70dp" />
+
+            <TextView
+                android:id="@+id/cloud"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:padding="5dp"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text=" %" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Gust"
+                android:textAllCaps="false"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="70dp"
+                android:src="@drawable/gust" />
+
+            <TextView
+                android:id="@+id/gust_kph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:text=" km/p" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        app:cardBackgroundColor="@color/cardview_shadow_start_color"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="12dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/forecastlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/forecast_row" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:layout_width="390dp"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        android:layout_marginTop="1dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_margin="10dp"
+        android:weightSum="4">
+
+        <TextView
+            android:id="@+id/tv_history_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="Yesterday"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/history_temp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:layout_weight="1"
+            android:text="History Temperature"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/history_icon"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            tools:src="@drawable/cloud" />
+
+        <TextView
+            android:id="@+id/history_condition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="History Condition"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="390dp"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        android:layout_marginTop="1dp"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
